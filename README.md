@@ -260,7 +260,7 @@ MIT License - Free for commercial and personal use
 
 ## 🙏 Acknowledgments
 
-Built with ❤️ for developers who switch between platforms.
+Built with GPU for developers who switch between platforms.
 
 ---
 
