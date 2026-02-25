@@ -312,7 +312,7 @@ func (ps *ProfileSync) ExecuteMigration(sourceBase, destBase string) error {
 	failCount := 0
 	skipCount := 0
 	
-	noticeColor.Println("\n🚀 Starting migration...\n")
+	noticeColor.Println("🚀 Starting migration...")
 	
 	for i, item := range ps.migrationPlan.Items {
 		// Check if source exists
@@ -391,7 +391,7 @@ func (ps *ProfileSync) copyFile(src, dst string) error {
 
 // PrintReport prints a migration report
 func (ps *ProfileSync) PrintReport() {
-	infoColor.Println("\n" + strings.Repeat("=", 60))
+	infoColor.Println("" + strings.Repeat("=", 60))
 	infoColor.Println("📊 MIGRATION REPORT")
 	infoColor.Println(strings.Repeat("=", 60))
 	
@@ -401,7 +401,7 @@ func (ps *ProfileSync) PrintReport() {
 	
 	successColor.Printf("✅ Successfully migrated: %d\n", ps.migrationPlan.TotalItems-ps.migrationPlan.SkippedItems)
 	warnColor.Printf("⏭️  Skipped:           %d\n", ps.migrationPlan.SkippedItems)
-	errorColor.Printf("❌ Failed:            0\n")
+	errorColor.Printf("❌ Failed:            0")
 	
 	infoColor.Println(strings.Repeat("=", 60))
 	
@@ -418,7 +418,7 @@ func (ps *ProfileSync) PrintReport() {
 	}
 	sort.Strings(types)
 	
-	infoColor.Println("\n📁 Items by Type:")
+	infoColor.Println("📁 Items by Type:")
 	for _, t := range types {
 		items := typeGroups[t]
 		if len(items) > 0 {
@@ -429,10 +429,10 @@ func (ps *ProfileSync) PrintReport() {
 	infoColor.Println(strings.Repeat("=", 60))
 	
 	if ps.dryRun {
-		warnColor.Println("\n⚠️  This was a DRY RUN. No files were actually migrated.")
-		warnColor.Println("Run without --dry-run to perform the actual migration.\n")
+		warnColor.Println("⚠️  This was a DRY RUN. No files were actually migrated.")
+		warnColor.Println("Run without --dry-run to perform the actual migration.")
 	} else {
-		successColor.Println("\n✅ Migration complete!\n")
+		successColor.Println("✅ Migration complete!")
 	}
 }
 
